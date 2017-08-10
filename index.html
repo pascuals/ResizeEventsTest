@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="js/ResizeSensor.js"></script>
+  <script type="text/javascript" src="js/jquery-1.4.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <p>
+      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+    </p>
+
+    <span class='resized'>0</span>
+  </div>
+
+  <script>
+    $(function() {
+      new ResizeSensor($('p'), function() {
+        $('.resized').text($('.resized').text() * 1 + 1);
+      });
+
+      $('p').css("line-height", '50px');
+    });
+  </script>
+</body>
+</html>
