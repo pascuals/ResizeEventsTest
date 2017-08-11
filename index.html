@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="js/ResizeSensor.js"></script>
   <script type="text/javascript" src="js/jquery-1.4.js"></script>
+  <script type="text/javascript" src="js/element-resize-detector.js"></script>
+  <script type="text/javascript" src="js/ResizeSensor.js"></script>
 </head>
 
 <body>
-  <div class="container">
+  <div class="ResizeSensor-container">
     <p>
-      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      <b>ResizeSensor.js</b>: Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
     </p>
 
     <span class='resized'>0</span>
   </div>
 
+  <div class="element-resize-detector-container">
+    <p>
+      <b>element-resize-detector</b>: Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+    </p>
+
+    <span class='resized'>0</span>
+  </div>
   <script>
     $(function() {
-      new ResizeSensor($('p'), function() {
-        $('.resized').text($('.resized').text() * 1 + 1);
+      new ResizeSensor($('.ResizeSensor-container p'), function() {
+        $('.ResizeSensor-container .resized').text($('.resized').text() * 1 + 1);
       });
 
-      $('p').css("line-height", '50px');
+      $('.ResizeSensor-container p').css("line-height", '50px');
+      
+      var erd = elementResizeDetectorMaker({
+          strategy: "scroll",
+          callOnAdd: true,
+          debug: true
+      });
+      erd.listenTo($('.element-resize-detector-container p')[0], function() {
+        $('.element-resize-detector-container .resized').text($('.resized').text() * 1 + 1);
+      });
+
+      $('.element-resize-detector-container p').css("line-height", '50px');
     });
   </script>
 </body>
