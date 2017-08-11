@@ -25,7 +25,7 @@
   <script>
     $(function() {
       new ResizeSensor($('.ResizeSensor-container p'), function() {
-        $('.ResizeSensor-container .resized').text($('.resized').text() * 1 + 1);
+        $('.ResizeSensor-container .resized').text($('.ResizeSensor-container .resized').text() * 1 + 1);
       });
 
       $('.ResizeSensor-container p').css("line-height", '50px');
@@ -36,7 +36,7 @@
           debug: true
       });
       erd.listenTo($('.element-resize-detector-container p')[0], function() {
-        $('.element-resize-detector-container .resized').text($('.resized').text() * 1 + 1);
+        $('.element-resize-detector-container .resized').text($('.element-resize-detector-container .resized').text() * 1 + 1);
       });
 
       $('.element-resize-detector-container p').css("line-height", '50px');
