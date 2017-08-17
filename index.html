@@ -4,10 +4,15 @@
   <script type="text/javascript" src="js/jquery-1.4.js"></script>
   <script type="text/javascript" src="js/element-resize-detector.js"></script>
   <script type="text/javascript" src="js/ResizeSensor.js"></script>
+  <style type="text/css">
+    div + .resize-container {
+      margin-top: 15px;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="ResizeSensor-container">
+  <div class="resize-container ResizeSensor-container">
     <b>ResizeSensor.js</b>: 
     <p>
       Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
@@ -16,7 +21,7 @@
     <span class='resized'>0</span>
   </div>
 
-  <div class="element-resize-detector-container">
+  <div class="resize-container element-resize-detector-container">
     <b>element-resize-detector</b>: 
     <p>
       Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
